@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Codegen2
+Bundle-SymbolicName: tutorial.codegen2;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: tutorial.codegen2
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: tutorial;bundle-version="0.1.0",
+ org.eclipse.xtend;bundle-version="2.2.0",
+ org.eclipse.emf.mwe2.launch;bundle-version="2.11.3",
+ org.apache.log4j;bundle-version="1.2.15",
+ org.apache.commons.logging;bundle-version="1.2.0",
+ org.eclipse.ocl.xtext.essentialocl;bundle-version="1.13.0",
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro

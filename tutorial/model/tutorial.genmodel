@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/tutorial/src-gen" creationIcons="false" editDirectory="/tutorial.edit/src-gen"
+    editorDirectory="/tutorial.editor/src-gen" modelPluginID="tutorial" modelName="Tutorial"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>tutorial.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Tutorial" disposableProviderFactory="true" ecorePackage="tutorial.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tutorial.ecore#//Material">
+      <genEnumLiterals ecoreEnumLiteral="tutorial.ecore#//Material/WOOD"/>
+      <genEnumLiterals ecoreEnumLiteral="tutorial.ecore#//Material/STEEL"/>
+      <genEnumLiterals ecoreEnumLiteral="tutorial.ecore#//Material/COPPER"/>
+      <genEnumLiterals ecoreEnumLiteral="tutorial.ecore#//Material/GOLD"/>
+    </genEnums>
+    <genClasses ecoreClass="tutorial.ecore#//Factory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Factory/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tutorial.ecore#//Factory/itemTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//ItemType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//ItemType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tutorial.ecore#//ItemType/markers"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//ComplexItemType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tutorial.ecore#//ComplexItemType/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tutorial.ecore#//ComplexItemType/itemConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//BasicItemType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//BasicItemType/material"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tutorial.ecore#//BasicItemType/shape"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tutorial.ecore#//BasicItemType/color"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tutorial.ecore#//Shape">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Shape/length"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//CylinderShape">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//CylinderShape/radius"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//BlockShape">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//BlockShape/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//BlockShape/heigth"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//Color">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Color/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Color/red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Color/green"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Color/blue"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Component/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tutorial.ecore#//Component/itemType"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//ItemConnection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tutorial.ecore#//ItemConnection/componentA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tutorial.ecore#//ItemConnection/componentB"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tutorial.ecore#//ItemConnection/markerA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tutorial.ecore#//ItemConnection/markerB"/>
+    </genClasses>
+    <genClasses ecoreClass="tutorial.ecore#//Marker">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tutorial.ecore#//Marker/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

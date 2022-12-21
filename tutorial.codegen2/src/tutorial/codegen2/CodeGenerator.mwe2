@@ -1,0 +1,37 @@
+module generator
+
+import org.eclipse.emf.mwe.utils.*
+
+var targetDir = "src-gen"
+var modelPath = "models"
+var slotID = "models-slot"
+
+Workflow {
+
+	bean = StandaloneSetup {
+		registerGeneratedEPackage = "tutorial.TutorialPackage"
+		
+	}
+		
+	component = DirectoryCleaner {
+		directory = targetDir
+	}
+
+	component = tutorial.codegen2.SimulatorGeneratorSupport {}
+
+	component = org.eclipse.xtext.mwe.Reader {
+		path = modelPath
+		register = tutorial.codegen2.SimulatorGeneratorSetup {}
+		loadResource = {
+			slot = slotID
+		}
+	}
+
+	component = org.eclipse.xtext.generator.GeneratorComponent {
+		register = tutorial.codegen2.SimulatorGeneratorSetup {}
+		slot = slotID
+		outlet = {
+			path = targetDir
+		}
+	}
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated tutorial -->
+      <package
+            uri="http://www.example.org/tutorial"
+            class="tutorial.TutorialPackage"
+            genModel="model/tutorial.genmodel"/>
+   </extension>
+
+</plugin>

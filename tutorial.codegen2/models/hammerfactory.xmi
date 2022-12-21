@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tutorial:Factory
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tutorial="http://www.example.org/tutorial"
+    xsi:schemaLocation="http://www.example.org/tutorial ../../tutorial/model/tutorial.ecore"
+    name="HammerFactory">
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHandle">
+    <markers
+        name="Head Connection Point"/>
+    <shape xsi:type="tutorial:CylinderShape"/>
+    <color name="Brown"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHead"
+      material="STEEL">
+    <markers
+        name="Handle Connection Point"/>
+    <shape xsi:type="tutorial:BlockShape"/>
+    <color name="Grey"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:ComplexItemType"
+      name="Hammer">
+    <components
+        name="Hammer Handle"
+        itemType="//@itemTypes.0"/>
+    <components
+        name="Hammer Head"
+        itemType="//@itemTypes.1"/>
+    <itemConnections
+        componentA="//@itemTypes.2/@components.0"
+        componentB="//@itemTypes.2/@components.1"
+        markerA="//@itemTypes.0/@markers.0"
+        markerB="//@itemTypes.1/@markers.0"/>
+  </itemTypes>
+</tutorial:Factory>
